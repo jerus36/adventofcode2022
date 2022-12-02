@@ -4,6 +4,7 @@ import (
 	"adventofcode2022/internal/util"
 	"bufio"
 	"fmt"
+	"sort"
 	"strconv"
 	"strings"
 )
@@ -13,15 +14,12 @@ func Solve() {
 
 	scanner.Split(bufio.ScanLines)
 
-	max_calories := -1
 	cur := 0
+	var res []int
 	for scanner.Scan() {
 		line := scanner.Text()
 		if len(strings.TrimSpace(line)) == 0 {
-			if cur > max_calories {
-				max_calories = cur
-			}
-
+			res = append(res, cur)
 			cur = 0
 		} else {
 			iv, err := strconv.Atoi(line)
@@ -30,5 +28,11 @@ func Solve() {
 			cur = cur + iv
 		}
 	}
-	fmt.Println("Max Calories:", max_calories)
+	sort.Ints(res)
+	tot := 0
+	for _, v := range res[len(res)-3:] {
+		tot += v
+	}
+	fmt.Println("Part 1: Max Calories:", res[len(res)-1])
+	fmt.Println("Part 2: Max Calories:", tot)
 }
