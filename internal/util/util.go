@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"strings"
 )
 
 func Check(e error) {
@@ -37,7 +38,10 @@ func ReadLines(day string) []string {
 	var ret []string
 	scanner := bufio.NewScanner(fd)
 	for scanner.Scan() {
-		ret = append(ret, scanner.Text())
+		txt := scanner.Text()
+		if !strings.HasPrefix(txt, "#") {
+			ret = append(ret, scanner.Text())
+		}
 	}
 	return ret
 }
