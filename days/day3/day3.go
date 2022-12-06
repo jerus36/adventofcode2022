@@ -1,7 +1,6 @@
 package day3
 
 import (
-	"adventofcode2022/internal/util"
 	"fmt"
 	"sort"
 	"unicode"
@@ -113,8 +112,7 @@ func part2(lines []string) {
 	fmt.Println("Part2:", tot)
 }
 
-func Solve() {
-	lines := util.ReadLines("3")
-	//part1(lines)
+func Solve(lines []string) {
+	part1(lines)
 	part2(lines)
 }

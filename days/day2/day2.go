@@ -47,7 +47,7 @@ func part1_map() map[string]int {
 	return m
 }
 
-func Solve() {
+func Solve(l []string) {
 	lines := util.ReadLines("2")
 	m := part1_map()
 	val := 0
