@@ -9,7 +9,7 @@ import (
 	"strings"
 )
 
-func Solve() {
+func Solve(lines []string) {
 	scanner := util.GetInput("1")
 
 	scanner.Split(bufio.ScanLines)
