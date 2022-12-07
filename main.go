@@ -5,6 +5,7 @@ import (
 	"adventofcode2022/days/day2"
 	"adventofcode2022/days/day3"
 	"adventofcode2022/days/day4"
+	"adventofcode2022/days/day5"
 	"adventofcode2022/internal/util"
 	"fmt"
 	"os"
@@ -15,6 +16,7 @@ var days = map[string]interface{}{
 	"2": day2.Solve,
 	"3": day3.Solve,
 	"4": day4.Solve,
+	"5": day5.Solve,
 }
 
 func notImplemented(day string) {
